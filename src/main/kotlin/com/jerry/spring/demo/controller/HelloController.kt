@@ -23,4 +23,8 @@ class HelloController {
         return "Hello World3!"
     }
 
+    @GetMapping("/hello4")
+    fun hello4(): String {
+        return "Hello World4!"
+    }
 }

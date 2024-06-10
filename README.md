@@ -4,6 +4,9 @@ https://start.spring.io/
 ## login docker
 docker login
 
+## local gradle build
+./gradlew build
+
 ## Build Docker (Normal)
 ### build docker image
 docker build -t {image name} .
