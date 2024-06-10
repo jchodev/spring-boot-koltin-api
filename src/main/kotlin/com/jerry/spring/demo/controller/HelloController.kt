@@ -12,4 +12,15 @@ class HelloController {
     fun hello(): String {
         return "Hello World!"
     }
+
+    @GetMapping("/hello2")
+    fun hello2(): String {
+        return "Hello World2!"
+    }
+
+    @GetMapping("/hello3")
+    fun hello3(): String {
+        return "Hello World3!"
+    }
+
 }
