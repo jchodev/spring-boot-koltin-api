@@ -1,6 +1,7 @@
 package com.jerry.spring.demo.security
 
 
+import com.jerry.spring.demo.model.UserRole
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity
@@ -46,8 +47,8 @@ class SpringSecurityConfig(
             .authorizeExchange { exchanges ->
                 exchanges
                     .pathMatchers(*PERMITTED_URL).permitAll()
-                    .pathMatchers("/api/hellouser").hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
-                    .pathMatchers("/api/helloadmin").hasAuthority("ROLE_ADMIN")
+                    .pathMatchers("/api/hellouser").hasAnyAuthority(UserRole.ROLE_ADMIN.value,UserRole.ROLE_USER.value)
+                    .pathMatchers("/api/helloadmin").hasAuthority(UserRole.ROLE_ADMIN.value)
                     .anyExchange()
                     .authenticated()
             }
