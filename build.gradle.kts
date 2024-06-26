@@ -19,12 +19,30 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("io.projectreactor:reactor-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+	//db connect
+	implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
+	//postgresl
+	implementation ("org.postgresql:postgresql")
+	//password encrypt
+	implementation("org.springframework.security:spring-security-crypto")
+
+	//swagger (with webflux only)
+	implementation ("org.springdoc:springdoc-openapi-starter-webflux-ui:2.5.0")
+
+	//spring security
+	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.security:spring-security-oauth2-core:6.3.1")
+	implementation("io.jsonwebtoken:jjwt:0.12.5")
 }
 
 kotlin {
